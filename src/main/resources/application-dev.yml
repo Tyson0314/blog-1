@@ -4,10 +4,10 @@ spring:
   jackson:
     property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url : jdbc:mysql://140.143.26.185:3306/test_blog?autoReconnect=true&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url : jdbc:mysql://129.204.179.3:3306/blog?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
-    password: sqlpw
+    password: 123456
 #可以用data.name表示
 qiniu:
   ak: DRDAFWBE9MeinK6xVG4S2TWgAK41836kT9GfXVcx

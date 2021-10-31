@@ -1,6 +1,6 @@
 package cn.mycookies.common.base;
 
-import com.mysql.jdbc.StringUtils;
+import com.mysql.cj.util.StringUtils;
 import lombok.Data;
 
 import java.util.Objects;

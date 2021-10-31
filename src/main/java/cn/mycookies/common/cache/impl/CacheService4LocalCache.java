@@ -3,7 +3,7 @@ package cn.mycookies.common.cache.impl;
 import cn.mycookies.common.cache.CacheService;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import com.mysql.jdbc.StringUtils;
+import com.mysql.cj.util.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
