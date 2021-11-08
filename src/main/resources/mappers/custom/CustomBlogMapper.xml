@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.mycookies.dao.BlogMapper">
-    <update id="updateBlog" parameterType="cn.mycookies.pojo.dto.BlogAddRequest">
+<mapper namespace="com.dabin.dao.BlogMapper">
+    <update id="updateBlog" parameterType="com.dabin.pojo.dto.BlogAddRequest">
         update blog
         <set>
             <if test="categoryId != null">
@@ -46,7 +46,7 @@
         </set>
         where id = #{blogId}
     </update>
-    <select id="selectBlogs" resultType="cn.mycookies.pojo.meta.BlogDO">
+    <select id="selectBlogs" resultType="com.dabin.pojo.meta.BlogDO">
 
         SELECT
         t.id,t.title,
@@ -70,7 +70,7 @@
             </if>
         </where>
     </select>
-    <select id="selectByIdAndStatus" resultType="cn.mycookies.pojo.meta.BlogWithBLOBs">
+    <select id="selectByIdAndStatus" resultType="com.dabin.pojo.meta.BlogWithBLOBs">
         SELECT
         id,title,
         img_url as imgUrl,
@@ -89,7 +89,7 @@
             </if>
         </where>
     </select>
-    <select id="selectLastOrNext" resultType="cn.mycookies.pojo.meta.BlogDO">
+    <select id="selectLastOrNext" resultType="com.dabin.pojo.meta.BlogDO">
         SELECT
         id,title,
         img_url as imgUrl,
@@ -109,7 +109,7 @@
         </where>
         LIMIT 1
     </select>
-    <select id="selectHotOrRecommendBlogs" resultType="cn.mycookies.pojo.vo.BlogDetail4UserVO">
+    <select id="selectHotOrRecommendBlogs" resultType="com.dabin.pojo.vo.BlogDetail4UserVO">
         SELECT
         id,title,
         img_url as imgUrl,

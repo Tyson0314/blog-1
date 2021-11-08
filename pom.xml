@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mycookies</groupId>
+    <groupId>com.dabin</groupId>
     <artifactId>myblog</artifactId>
-    <version>0.0.1-RELEASE</version>
-    <packaging>war</packaging>
+    <version>1.0.0-RELEASE</version>
+    <packaging>jar</packaging>
 
     <name>myblog</name>
     <description>The blog of Jann Lee</description>
@@ -149,6 +149,19 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
             <version>0.10.5</version>
+        </dependency>
+
+        <!--JustAuth第三方登录模块-->
+        <dependency>
+            <groupId>me.zhyd.oauth</groupId>
+            <artifactId>JustAuth</artifactId>
+            <version>1.16.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.7</version>
         </dependency>
     </dependencies>
 

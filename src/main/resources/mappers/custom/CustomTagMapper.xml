@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.mycookies.dao.TagMapper">
+<mapper namespace="com.dabin.dao.TagMapper">
 
-  <select id="queryByName" parameterType="cn.mycookies.pojo.dto.TagAddRequest" resultType="cn.mycookies.pojo.meta.TagDO">
+  <select id="queryByName" parameterType="com.dabin.pojo.dto.TagAddRequest" resultType="com.dabin.pojo.meta.TagDO">
     select
     <include refid="Base_Column_List"/>
     <where>
@@ -14,7 +14,7 @@
     </if>
     </where>
   </select>
-  <select id="queryById" parameterType="cn.mycookies.pojo.meta.TagDO" resultType="cn.mycookies.pojo.meta.TagDO">
+  <select id="queryById" parameterType="com.dabin.pojo.meta.TagDO" resultType="com.dabin.pojo.meta.TagDO">
     SELECT
     <include refid="Base_Column_List"/>
     <where>
@@ -26,7 +26,7 @@
       </if>
     </where>
   </select>
-  <select id="selectTagList" resultType="cn.mycookies.pojo.dto.TagWithCountVO">
+  <select id="selectTagList" resultType="com.dabin.pojo.dto.TagWithCountVO">
       SELECT
         COUNT(t.blog_id) as   blogCount, t.tag_id as id, t2.tag_name as tagName
     FROM
@@ -35,13 +35,13 @@
         blog_tag t2 ON t.tag_id = t2.id
     GROUP BY id
   </select>
-  <select id="selectTagsOfBlog" resultType="cn.mycookies.pojo.meta.TagDO">
+  <select id="selectTagsOfBlog" resultType="com.dabin.pojo.meta.TagDO">
     SELECT blog_tag.tag_name as tagName ,blog_tag.id
     FROM blog_tags
     LEFT JOIN blog_tag on blog_tag.id = blog_tags.tag_id
     where blog_id = #{blogId}
   </select>
-  <select id="selectCategoryList" resultType="cn.mycookies.pojo.dto.TagWithCountVO">
+  <select id="selectCategoryList" resultType="com.dabin.pojo.dto.TagWithCountVO">
     SELECT
       COUNT(t.category_id)  as blogCount, t.category_id as id, t2.tag_name as tagName
     FROM
@@ -50,7 +50,7 @@
       blog_tag t2 ON t.category_id = t2.id
     GROUP BY t.category_id;
   </select>
-  <update id="updateTag" parameterType="cn.mycookies.pojo.meta.TagDO">
+  <update id="updateTag" parameterType="com.dabin.pojo.meta.TagDO">
       UPDATE blog_tag
     <set>
        <if test="tagName != null">
@@ -63,8 +63,8 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <delete id="deleteById" parameterType="int">
-    DELETE 
+    DELETE
     FROM blog_tag
-    WHERE id=#{id,jdbcType=INTEGER} 
+    WHERE id=#{id,jdbcType=INTEGER}
   </delete>
 </mapper>
